@@ -374,10 +374,10 @@ export default function ProjectDetailPage() {
                     <Box sx={{ position: "absolute", bottom: 10, right: 10, display: "flex", flexDirection: "column", gap: "6px", zIndex: 3 }}>
                       {/* AI icon — desktop only */}
                       <CustomTooltip title="Ask To AI" placement="top">
-                        <Box component="img" src="/assets/icons/AI.png" alt="Ask To AI" sx={{ cursor: "pointer", width: "40px" }} />
+                        <Box component="img" src="/assets/icons/AI.png" alt="Ask To AI" sx={{ cursor: "pointer",marginLeft:"12px" }} />
                       </CustomTooltip>
                       <CustomTooltip title="Maximize" placement="top">
-                        <Box onClick={openLightbox} component="img" src="/assets/images/extend.svg" alt="Maximize" sx={{ cursor: "pointer" }} />
+                        <Box onClick={openLightbox} component="img" src="/assets/icons/extend.png" alt="Maximize" sx={{ cursor: "pointer"}} />
                       </CustomTooltip>
                     </Box>
                   </Box>
@@ -436,7 +436,7 @@ export default function ProjectDetailPage() {
                         </Tooltip>
                       )} */}
                       <CustomTooltip title="Maximize" placement="top">
-                        <Box onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }} component="img" src="/assets/images/extend.svg" alt="Maximize" sx={{ cursor: "pointer" }} />
+                        <Box onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }} component="img" src="/assets/images/extend.svg" alt="Maximize" sx={{ cursor: "pointer", width: "40px" }} />
                       </CustomTooltip>
                     </Box>
                   </Box>
@@ -578,8 +578,6 @@ export default function ProjectDetailPage() {
             <IconButton onClick={lbNext} sx={{ position: "absolute", top: "50%", right:"0px",transform: "translateY(-50%)", zIndex: 2, p: 0 }}>
               <img src="/assets/icons/left.svg" alt="next" style={{ width: isMobile ? 50 : undefined}} />
             </IconButton>
-            
-            <CustomTooltip title="Minimize" placement="top">
               <Box
                 component="img"
                 src="/assets/icons/minimize.png"
@@ -587,7 +585,6 @@ export default function ProjectDetailPage() {
                 onClick={() => setLightboxOpen(false)}
                 sx={{ position: "absolute", bottom: 10, right: 10, zIndex: 2, cursor: "pointer" }}
               />
-            </CustomTooltip>
           </Box>
           <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
             {slides.map((_, i) => (

@@ -329,7 +329,7 @@ function WorkTab({ onClose, inline, compact }) {
         gridTemplateColumns: compact ? "repeat(2, minmax(0, 1fr))" : undefined,
         columnGap: compact ? "18px" : 0,
         rowGap: compact ? "16px" : 0,
-        flexWrap: "wrap",
+        flexWrap: { xs: "wrap", md: "nowrap" },
         gap: "0px",
         mt: "28px",
         flex: "0 0 auto",
