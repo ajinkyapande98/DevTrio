@@ -415,7 +415,7 @@ class RAGService:
         return docs
 
     # Maximum characters to include per document — prevents bloating the LLM context window
-    MAX_CHARS_PER_DOC = 1500
+    MAX_CHARS_PER_DOC = 4000
 
     def _build_context(self, documents: List[Document]) -> str:
         """
