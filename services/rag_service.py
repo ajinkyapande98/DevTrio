@@ -269,12 +269,12 @@ class RAGService:
                 "from_cache": False,
             }
 
+        # NOTE: We intentionally do NOT switch mode from "web" to "ai" based on intent.
+        # The _retrieve_documents method already falls back to global search if no
+        # project-specific docs are found. Switching mode here was causing valid
+        # project queries (e.g. "Tell me about the Project Scope for this project")
+        # to lose project context when the intent classifier returned "global".
         original_mode = mode
-        if mode == "web" and project_id:
-            # If user asks out-of-scope question while on project page, dynamically switch to global mode
-            if intent in ["global", "cross_project"]:
-                mode = "ai"
-                # We keep project_id to know the context contextually, but mode='ai' avoids strict filtering.
 
         # ------------------------------------------------------------------
         # Step 1: Retrieve relevant documents
